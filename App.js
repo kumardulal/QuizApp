@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Button from './component/Button';
+import Home from './screen/Home';
 
 export default function App() {
+  const [currentpage, setCurrentPage] = useState(<Home />)
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      {/* <Home setCurrentPage={setCurrentPage} /> */}
+      {currentpage}
+      <Button setCurrentPage={setCurrentPage} />
+
+
+
       <StatusBar style="auto" />
     </View>
   );
@@ -16,6 +24,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: "lightblue",
+
   },
 });
